@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <script>
+      function $URL(name) {
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+      if ($URL("url")) {
+        var url = $URL("url");
+        document.getElementById("url").innerHTML = "<iframe src='" + url + "'></iframe>";
+      }
+    </script>
+  </head>
+  <body>
+  <div id="url">
+    <form action="" medthod="GET">
+      <input type="text" placeholder="URL" name="url" id="url" />
+    </form>
+  </div>
+  </body>
+</html>
