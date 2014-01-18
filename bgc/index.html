@@ -15,7 +15,10 @@
         var ifr = window.open(url);
         var pretag = ifr.document.getElementsByTagName("pre");
         // document.getElementById("pre").innerHTML = pretag.innerHTML;
-        document.getElementById("pre").innerHTML = ifr.document.documentElement.getElementsByTagName("pre")[0].innerHTML;
+        var div = document.createElement("div");
+        div.setAttribute("id", "srcdiv");
+        document.body.appendChild(div);
+        ifr.document.getElementById("srcdiv").innerHTML = ifr.document.documentElement.getElementsByTagName("pre")[0].innerHTML;
       }
     </script>
   </head>
