@@ -12,8 +12,7 @@
       }
       if ($URL("url")) {
         var url = $URL("url");
-        // var ifr = window.open(url);
-        var ifr = window.open("http://google.com");
+        var ifr = window.open(url);
         var pretag = ifr.document.getElementsByTagName("pre");
         // document.getElementById("pre").innerHTML = pretag.innerHTML;
         document.getElementById("pre").innerHTML = ifr.document.documentElement.getElementsByTagName("pre")[0].innerHTML;
