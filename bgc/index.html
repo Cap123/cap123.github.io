@@ -7,17 +7,25 @@
         results = regex.exec(location.search);
         return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
       }
+      function ifst(t) {
+        return window.frames[0].document.getElementsByClassName("classs")[0].getElementsByTagName(t)[0].src
+      }
       if ($URL("url")) {
         var url = $URL("url");
-        document.getElementById("url").innerHTML = "<iframe src='" + url + "'></iframe>";
+        document.getElementById("url").innerHTML = "<iframe id='frame' src='" + url + "'></iframe>";
+        var pretag = ifst("pre");
+        document.getElementById("pre").innerHTML = pretag.innerHTML;
       }
     </script>
   </head>
   <body>
-  <div id="url">
-    <form action="" medthod="GET">
-      <input type="text" placeholder="URL" name="url" id="url" />
-    </form>
-  </div>
+    <div id="url">
+      <form action="" medthod="GET">
+        <input type="text" placeholder="URL" name="url" id="url" />
+      </form>
+    </div>
+    <pre id="pre">
+      
+    </pre>
   </body>
 </html>
