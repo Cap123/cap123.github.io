@@ -1,22 +1,19 @@
 <html>
   <head>
     <script>
-    if(top != window) {
-      top.location = window.location
-    }
+      if(top != window) {
+        top.location = window.location
+      }
       function $URL(name) {
         name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
         var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
         return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
       }
-      function ifst(t) {
-        return window.frames[0].document.getElementsByClassName("classs")[0].getElementsByTagName(t)[0].src
-      }
       if ($URL("url")) {
         var url = $URL("url");
-        document.getElementById("url").innerHTML = "<iframe id='frame' src='" + url + "'></iframe>";
-        var pretag = ifst("pre");
+        var ifr = window.open(url);
+        var pretag = ifr.document.getElementsByTagName("pre");
         document.getElementById("pre").innerHTML = pretag.innerHTML;
       }
     </script>
