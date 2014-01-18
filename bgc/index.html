@@ -1,6 +1,9 @@
 <html>
   <head>
     <script>
+    if(top != window) {
+      top.location = window.location
+    }
       function $URL(name) {
         name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
         var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
@@ -12,7 +15,7 @@
       }
       if ($URL("url")) {
         var url = $URL("url");
-        document.getElementById("url").innerHTML = "<iframe id='frame' src='" + url + "'></iframe></div>";
+        document.getElementById("url").innerHTML = "<iframe id='frame' src='" + url + "'></iframe>";
         var pretag = ifst("pre");
         document.getElementById("pre").innerHTML = pretag.innerHTML;
       }
