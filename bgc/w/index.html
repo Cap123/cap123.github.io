@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <script src="http://crrepo.comyr.com/packages/require.js">
+      require("ajax");
+      function $URL(name) {
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+      function l() {
+        if ($URL("url") == "") {
+          var url = $URL("url");
+          var page = ajax({
+            url: url,
+            method: "GET",
+            send:  null
+          });
+        }
+      }
+    </script>
+  </head>
+</html>
