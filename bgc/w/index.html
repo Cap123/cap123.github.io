@@ -1,22 +1,36 @@
 <html>
   <head>
-    <script src="http://crrepo.comyr.com/packages/require.js">
+  <!--
+    Import Require.JS
+  -->
+    <script src="http://crrepo.comyr.com/packages/require.js"></script>
+    <script>
+      // Import Ajax
       require("ajax");
+      // Get URL Parameters
       function $URL(name) {
         name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
         var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
         return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
       }
+      // Create the onLoad function
       function l() {
-        if ($URL("url") == "") {
+        // Check for URL parameter
+        if ($URL("url")) {
+          // Create URL Variable
           var url = $URL("url");
+          // Get Source code via Ajax
           var page = ajax({
             url: url,
             method: "GET",
             send:  null
           });
+          // Put the source code in the page div
           document.getElementById("page").innerHTML = page;
+        } else {
+          // If URL Paramater isn't there do nothing.
+          return;
         }
       }
     </script>
