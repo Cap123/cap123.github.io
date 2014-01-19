@@ -16,8 +16,20 @@
             method: "GET",
             send:  null
           });
+          document.getElementById("page").innerHTML = page;
         }
       }
     </script>
   </head>
+  <body onLoad="l();">
+    <div id="form">
+      <form action="" method="GET">
+        <input type="text" name="url" />
+        <input type="text" value="Submit" />
+      </form>
+    </div>
+    <div id="page">
+      
+    </div>
+  </body>
 </html>
