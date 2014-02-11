@@ -1,11 +1,15 @@
 <html>
 <head>
 <title>Cap123's GitHub Site</title>
+<link href="http://vjs.zencdn.net/4.3/video-js.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/4.3/video.js"></script>
 </head>
 <body>
-<h1>Welcome to the GitHub site of Cap123!</h1>
-<p>Let me show off my Repositories.</p>
-<a href="javascript:window.history(-1);" title="Go Back" />Go Back</a>&nbsp;&nbsp;<a href="javascript:window.history(+1);" title="Go Forwards" />Go Forwards</a>
-<iframe src="http://github.com/Cap123/" width="100%" height="75%" frameborder="no" scrolling="yes"></iframe>
+<video id="my_video_1" class="video-js vjs-default-skin" controls
+ preload="auto" width="640" height="264" poster="my_video_poster.png"
+ data-setup="{}">
+ <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+ <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">
+</video>
 </body>
 </html>
